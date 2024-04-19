@@ -1,0 +1,52 @@
+@use './colors'
+
+#header
+    position: fixed
+    top: 0
+    width: 100%
+    background-color: #d9d9d9d6
+    padding: 0
+
+#header nav
+    width: 100%
+
+#header nav #myMenu
+    display: flex
+    flex-direction: row
+    width: 100%
+    justify-content: space-around
+
+.homepage-banner
+    font-family: sans-serif
+    font-size: 7rem
+    color: #444343
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.292))
+
+.index
+    display: flex
+    align-items: center
+    background-image: url(../spheres.png)
+    background-repeat: round
+
+.social-sidebar
+    position: fixed
+    top: 80%
+    transform: translateY(-50%)
+    z-index: 1000
+    .social-icon
+        display: block
+        margin: 1em
+        padding: 1.25em
+        color: #000
+        text-align: center
+        background-color: colors.$social-icons
+        box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2392156863)
+        box-shadow: 0px 0px 8px 0px #85b6ffbf inset
+        border-radius: 50px
+        &:hover
+            background: #85b6ffbf
+
+.slide
+    margin-top: 2em
+    display: flex
+    align-items: center
