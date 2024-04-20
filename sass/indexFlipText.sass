@@ -1,3 +1,6 @@
+@use './colors'
+// fix the fact that the text isn't centered 
+// fix looping skipping?
 #container
     color: #999
     text-transform: uppercase
@@ -21,13 +24,13 @@
     animation: show 5s linear infinite
 
 #flip div div
-    background: #01e7fc6c
+    background: colors.$developer
 
 #flip div:first-child div
-    background: #ffb3006e
+    background: colors.$designer
 
 #flip div:last-child div
-    background: #e892f99f
+    background: colors.$enthusiast
 
 @keyframes show
     0%
