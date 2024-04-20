@@ -9,7 +9,7 @@ new fullpage( '#fullpage', {
     scrollBar: false,
     keyboardScrolling: true,
     fixedElements: '#header',
-    sectionsColor: ['#fafafa', '#fafafa', '#fafafa', '#fafafa'],
+    sectionsColor: ['#f9f9f9', '#fafafa', '#fafafa', '#fafafa'],
     licenseKey: 'gplv3-license',
     verticalCentered: true,
     navigationTooltips: ['home','projects', 'skills', 'about me'],
