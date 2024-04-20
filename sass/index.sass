@@ -16,10 +16,34 @@
     width: 100%
     justify-content: space-around
 
+// #fp-nav, .fp-slidesNav
+//     ul
+//         li:nth-child(1) a.active span
+//             background: colors.$developer
+//         li:nth-child(2) a.active span
+//             background: colors.$designer
+//         li:nth-child(3) a.active span
+//             background: colors.$enthusiast
+//         li a span
+//             box-shadow: 0px 1px 3px #00000075
+
+#fp-nav, .fp-slidesNav
+    $nav-colors: ( 1: colors.$developer, 2: colors.$designer, 3: colors.$enthusiast )
+    ul
+        @each $index, $color in $nav-colors
+            li:nth-child(#{$index}) a.active span
+                background: $color
+        li a span
+            box-shadow: 0px 1px 3px #00000075
+
+
+#fp-nav ul li .fp-tooltip
+    color: colors.$text
+
 .homepage-banner
     font-family: sans-serif
     font-size: 7rem
-    color: #444343
+    color: colors.$text
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.292))
 
 .index
