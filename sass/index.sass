@@ -25,8 +25,22 @@
 .index
     display: flex
     align-items: center
-    background-image: url(../spheres.png)
-    background-repeat: round
+    flex-direction: column
+    width: 100%
+
+.spline-holder
+    position: absolute
+    top: 0
+    bottom: 0
+    right: 0
+    left: 0
+    overflow: hidden
+    .inner-spline-holder
+        position: absolute
+        top: 0
+        bottom: 0
+        right: 0
+        left: 0
 
 .social-sidebar
     position: fixed
