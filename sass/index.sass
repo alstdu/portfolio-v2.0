@@ -82,6 +82,12 @@ body
 
 // ABOUT ME STYLES
 
+// .about-me
+//     display: flex
+//     flex-direction: column
+//     justify-content: center
+//     align-items: center
+
 .about-me-header
     width: 7rem
     margin:
@@ -92,18 +98,30 @@ body
     font-weight: 700
 
 .about-me-circles
-    width: 10em
-    height: 10em
-    border-radius: 100px
+    display: flex
+    align-items: center
+    justify-content: center
+
+.about-me-circle
+    display: flex
+    align-items: center
+    justify-content: center
+    margin: 6em
+    width: 15em
+    height: 15em
+    border-radius: 150px
 
 .about-me-community-circle
     background-color: colors.$developer
+    box-shadow: 0 0 15px 15px colors.$developer
 
 .about-me-fluidity-circle
     background-color: colors.$designer
+    box-shadow: 0 0 15px 15px colors.$designer
 
 .about-me-leadership-circle
     background-color: colors.$enthusiast
+    box-shadow: 0 0 15px 15px colors.$enthusiast
 
 // SIDE BAR STYLES
 
