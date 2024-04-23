@@ -21,6 +21,10 @@ body
     width: 100%
     justify-content: space-around
 
+.page-title
+    font-size: 2.25em
+    transform: rotate(-90deg)
+
 // INDEX STYLES
 
 // #fp-nav, .fp-slidesNav
@@ -95,16 +99,24 @@ body
     flex-direction: column
     justify-content: center
     align-items: center
-    margin: 10em
+    margin: 5em
         bottom: 0
 
-.about-me-header
+.about-me-main
     display: flex
     h2
-        width: 100%
+        width: 35%
         height: 1em
-        // transform: rotate(-90deg) this is causing some issues. come back to it 
-        font-weight: 700
+    .about-me-main-content
+        display: flex
+    .about-me-description
+        margin:
+            left: 1em
+
+.about-me-name
+    margin:
+        top: 0
+    font-size: 2em
 
 img.about-me-portrait
     width: auto
