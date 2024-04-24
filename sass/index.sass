@@ -149,6 +149,7 @@ li
     flex-direction: column
     margin:
         bottom: 2em
+        left: 2em
     h3
         font-size: 2.5em
         margin:
@@ -178,24 +179,36 @@ li
     flex-direction: column
     justify-content: center
     align-items: center
-    margin: 5em
+    margin: 2em
         bottom: 0
+    h3
+        font-size: 2.5em
+        margin:
+            top: 0
+            bottom: 0
 
 .about-me-main
     display: flex
+    justify-content: space-between
     h2
         width: 35%
         height: 1em
     .about-me-main-content
         display: flex
+        width: 75%
     .about-me-description
+        font-size: 1.1em
+        width: 100%
+        padding: 
+            left: 3em
+            right: 3em
         margin:
             left: 1em
 
 .about-me-name
     margin:
         top: 0
-    font-size: 2em
+    font-size: 2.5em
 
 img.about-me-portrait
     width: auto
@@ -212,10 +225,13 @@ img.about-me-portrait
     display: flex
     align-items: center
     justify-content: center
-    margin: 6em
+    margin: 5em
     width: 15em
     height: 15em
     border-radius: 150px
+    padding: 1em
+    p
+        font-size: 2.5em
 
 .about-me-community-circle
     background-color: colors.$developer
