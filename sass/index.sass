@@ -28,6 +28,11 @@ body
 li
     list-style-type: none
 
+.slide
+    margin-top: 2em
+    display: flex
+    align-items: center
+    
 // INDEX STYLES
 
 // #fp-nav, .fp-slidesNav
@@ -67,6 +72,13 @@ li
     color: colors.$text
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.292))
 
+.index-panel
+    position: absolute
+    width: 35%
+    left: 0
+    top: 0
+    bottom: 0
+
 .index
     display: flex
     align-items: center
@@ -86,6 +98,30 @@ li
         bottom: 0
         right: 0
         left: 0
+// PROJECTS STYLES
+
+.projects
+    display: flex
+    margin: 4em
+        bottom: 0
+
+.projects-group 
+    display: flex
+    justify-content: space-between
+    flex: 1
+
+.project-column
+    flex: 1
+    padding: 1em
+
+.project-card
+    width: 11em
+    background-color: #f0f0f0
+    border: 1px solid #ccc
+    padding: 20px
+    margin-bottom: 1em
+    h3
+        text-align: center
 
 // SKILLS STYLES
 
@@ -178,15 +214,3 @@ img.about-me-portrait
         border-radius: 50px
         &:hover
             background: #85b6ffbf
-
-.slide
-    margin-top: 2em
-    display: flex
-    align-items: center
-
-.index-panel
-    position: absolute
-    width: 35%
-    left: 0
-    top: 0
-    bottom: 0
