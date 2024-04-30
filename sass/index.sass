@@ -170,6 +170,8 @@ li
     display: flex
     align-items: center
     justify-content: space-around
+    ul
+        padding-inline-start: 0
 
 
 // ABOUT ME STYLES
@@ -211,10 +213,12 @@ li
     font-size: 2.5em
 
 img.about-me-portrait
-    width: auto
     height: 15em
-    border-radius: 200px
-    // box-shadow: 0 0 15px 0 colors.$enthusiast
+    aspect-ratio: 1
+    border-radius: 50%
+    object-fit: cover
+    margin-inline-end: 5em // probably a better way
+    filter: drop-shadow( 0 0 15px colors.$enthusiast )
 
 .about-me-circles
     display: flex
