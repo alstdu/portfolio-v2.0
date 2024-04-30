@@ -1,3 +1,5 @@
+const pages = ['home', 'projects', 'skills', 'about me'];
+
 /* global fullpage */
 new fullpage( '#fullpage', {
     menu: '#myMenu',
@@ -12,18 +14,20 @@ new fullpage( '#fullpage', {
     sectionsColor: ['#fafafa', '#fafafa', '#fafafa', '#fafafa'],
     licenseKey: 'gplv3-license',
     verticalCentered: true,
-    navigationTooltips: ['home','projects', 'skills', 'about me'],
+    navigationTooltips: pages,
     scrollOverflow: true,
-        onScrollOverflow: function(section, slide, position, direction){
-            // eslint-disable-next-line no-unused-vars
-            var params = {
-                section: section,
-                slide: slide,
-                position: position,
-                direction: direction,
-            };
-            console.log(params);
-},
+    // this regex matches spaces - replace replaces the spaces with nothing (removes them)
+    anchors: pages.map( s => s.replace(/\s/g, '') ),
+    onScrollOverflow: function(section, slide, position, direction) {
+        // eslint-disable-next-line no-unused-vars
+        var params = {
+            section: section,
+            slide: slide,
+            position: position,
+            direction: direction,
+        };
+        console.log( params );
+    },
 });
 
-console.log('helloworld');
+console.log('hello world');
