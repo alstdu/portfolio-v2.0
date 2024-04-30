@@ -26,8 +26,5 @@ new fullpage( '#fullpage', {
             position: position,
             direction: direction,
         };
-        console.log( params );
     },
 });
-
-console.log('hello world');
