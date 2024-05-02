@@ -27,13 +27,19 @@
     animation: show 5s linear infinite
 
 #flip div div
-    background: colors.$designer-glass
+    backdrop-filter: blur( 6px )
+    -webkit-backdrop-filter: blur( 6px )
+    box-shadow: 0px 0px 9px 0px colors.$designer inset
 
 #flip div:first-child div
-    background: colors.$developer-glass
+    backdrop-filter: blur( 6px )
+    -webkit-backdrop-filter: blur( 6px )
+    box-shadow: 0px 0px 9px 0px colors.$developer inset
 
 #flip div:last-child div
-    background: colors.$enthusiast-glass
+    backdrop-filter: blur( 6px )
+    -webkit-backdrop-filter: blur( 6px )
+    box-shadow: 0px 0px 9px 0px colors.$enthusiast inset
 
 @keyframes show
     0%
