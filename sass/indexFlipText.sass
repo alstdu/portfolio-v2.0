@@ -1,60 +1,45 @@
 @use './colors'
-// fix the fact that the text isn't centered 
-// fix looping skipping?
-#container
-    color: #999
+#flip
+    color: #444343
     text-transform: uppercase
     font-size: 3rem
     font-weight: bold
-    width: 100%
-    bottom: 50%
     margin:
-        top: .5em
-
-#flip
-    height: 70px
+        top: .25em
+    height: calc( 55.47px + ( 0.1em * 2 ) )
     overflow: hidden
 
-#flip > div > div
-    color: #444343
-    padding: 4px 12px
-    height: 45px
-    margin-bottom: 45px
-    display: inline-block
-    border-radius: 100px
+#flip > div
+    backdrop-filter: blur( 12px )
+    -webkit-backdrop-filter: blur( 12px )
+    border-radius: 20px
+    padding: 0.1em 0.75em 0.1em 0.4em
+    margin-bottom: calc( ( 55.47px + ( 0.1em * 2 ) ) / 2 )
 
-#flip div:first-child
-    animation: show 5s linear infinite
+#flip div
+    animation: show 10s linear infinite
 
-#flip div div
-    backdrop-filter: blur( 6px )
-    -webkit-backdrop-filter: blur( 6px )
-    box-shadow: 0px 0px 9px 0px colors.$designer inset
+#flip div:nth-child(1), #flip div:nth-child(4) 
+    box-shadow: 0px 0px 18px 18px colors.$developer inset
 
-#flip div:first-child div
-    backdrop-filter: blur( 6px )
-    -webkit-backdrop-filter: blur( 6px )
-    box-shadow: 0px 0px 9px 0px colors.$developer inset
+#flip div:nth-child(2)
+    box-shadow: 0px 0px 18px 18px colors.$designer inset
 
-#flip div:last-child div
-    backdrop-filter: blur( 6px )
-    -webkit-backdrop-filter: blur( 6px )
-    box-shadow: 0px 0px 9px 0px colors.$enthusiast inset
+#flip div:nth-child(3)
+    box-shadow: 0px 0px 18px 18px colors.$enthusiast inset
 
 @keyframes show
     0%
-        margin-top:-270px
-    5%
-        margin-top:-180px
+        transform: translateY(0%)
+    31%
+        transform: translateY(0%)
     33%
-        margin-top:-180px
-    38%
-        margin-top:-90px
+        transform: translateY(-150%)
+    64%
+        transform: translateY(-150%)
     66%
-        margin-top:-90px
-    71%
-        margin-top:0px
-    99.99%
-        margin-top:0px
+        transform: translateY(-300%)
+    98%
+        transform: translateY(-300%)
     100%
-        margin-top:-270px
+        transform: translateY(-450%)
