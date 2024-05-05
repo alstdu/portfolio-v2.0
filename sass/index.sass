@@ -55,7 +55,67 @@ li
 
 p
     line-height: 1.5
-    
+
+// FOO STYLES
+
+.foo:has(.foo-but-pos)
+    margin-top: 5em // give room for the button to be above the rest
+
+.foo
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    margin: 120px
+        top: 3em
+        bottom: 0
+    .page-title
+        font-size: 2.25em
+        writing-mode: vertical-lr
+        height: max-content
+        transform: rotate(180deg)
+        margin: 0
+    h3
+        font-size: 2.5em
+    .foo-main
+        display: flex
+        justify-content: space-between
+        margin: auto
+        max-width: 1350px
+        width: 100%
+        .foo-desc
+            font-size: 1.1em
+            width: 100%
+            margin:
+                left: 4em
+                right: 4em
+            position: relative // for foo-but-pos
+            .foo-name
+                margin: 0
+            h3
+                margin-bottom: 0
+        img.foo-portrait
+            height: 15em
+            aspect-ratio: 1
+            border-radius: 50%
+            object-fit: cover
+            filter: drop-shadow( 0 0 15px colors.$enthusiast )
+
+.foo-but
+    width: 7em
+    padding: .5em 1.25em
+    background-color: #333
+    color: #fff
+    border-radius: 20px
+    text-align: center
+    cursor: pointer
+    &:hover, &:focus
+        background-color: #555
+    &.foo-but-pos
+        position: absolute
+        top: -1em
+        transform: translateY(-100%)
+
 // INDEX STYLES
 
 // #fp-nav, .fp-slidesNav
@@ -122,6 +182,7 @@ p
         bottom: 0
         right: 0
         left: 0
+
 // PROJECTS STYLES
 
 .projects
@@ -149,110 +210,44 @@ p
         margin:
             bottom: .25em
 
-// SKILLS STYLES
-.skills-section
-    display: flex
-    margin: 4em
-        bottom: 0
-    
-.skills-section-content
-    display: flex
-    flex-direction: column
-    justify-content: center
-    flex: 1
-    width: 100%
-
-.resume-button, .foo-but
-    width: 7em
-    padding: .5em 1.25em
-    background-color: #333
-    color: #fff
-    border-radius: 20px
-    text-align: center
-    cursor: pointer
-    &:hover, &:focus
-        background-color: #555
-    &.foo-but-pos
-        position: absolute
-        top: -1em
-        transform: translateY(-100%)
-
+// SKILLS STYLES    
 .skills-lists
     display: flex
     align-items: center
     justify-content: space-between
+    flex-wrap: wrap
+    gap: 4em
+    // TODO: make it wrap in groups of 2
+    // one way to do that would be to wrap pairs in containers
     ul
         padding-inline-start: 0
 
-
 // ABOUT ME STYLES
 
-.foo:has(.foo-but-pos)
-    margin-top: 5em // give room for the button to be above the rest
-
-.about-me, .foo
+.about-me-circles
     display: flex
-    flex-direction: column
-    justify-content: center
     align-items: center
-    margin: 120px
-        top: 3em
-        bottom: 0
-    .page-title
-        font-size: 2.25em
-        writing-mode: vertical-lr
-        height: max-content
-        transform: rotate(180deg)
-        margin: 0
-    h3
-        font-size: 2.5em
-    .about-me-main, .foo-main
-        display: flex
-        justify-content: space-between
-        margin: auto
-        max-width: 1350px
-        width: 1350px
-        .about-me-description, .foo-desc
-            font-size: 1.1em
-            width: 100%
-            margin:
-                left: 4em
-                right: 4em
-            position: relative // for foo-but-pos
-            .about-me-name, .foo-name
-                margin: 0
-            h3
-                margin-bottom: 0
-        img.about-me-portrait
-            height: 15em
-            aspect-ratio: 1
-            border-radius: 50%
-            object-fit: cover
-            filter: drop-shadow( 0 0 15px colors.$enthusiast )
-    .about-me-circles
+    justify-content: center
+    .about-me-circle
         display: flex
         align-items: center
         justify-content: center
-        .about-me-circle
-            display: flex
-            align-items: center
-            justify-content: center
-            margin: 5em
-            width: 15em
-            height: 15em
-            border-radius: 150px
-            padding: 1em
-            p
-                font-size: 2.5em
-            &.about-me-community-circle
-                background-color: colors.$developer
-                box-shadow: 0 0 15px 15px colors.$developer
-            &.about-me-fluidity-circle
-                background-color: colors.$designer
-                box-shadow: 0 0 15px 15px colors.$designer
-            &.about-me-leadership-circle
-                background-color: colors.$enthusiast
-                box-shadow: 0 0 15px 15px colors.$enthusiast
+        margin: 5em
+        width: 15em
+        height: 15em
+        border-radius: 150px
+        padding: 1em
+        p
+            font-size: 2.5em
+        &.about-me-community-circle
+            background-color: colors.$developer
+            box-shadow: 0 0 15px 15px colors.$developer
+        &.about-me-fluidity-circle
+            background-color: colors.$designer
+            box-shadow: 0 0 15px 15px colors.$designer
+        &.about-me-leadership-circle
+            background-color: colors.$enthusiast
+            box-shadow: 0 0 15px 15px colors.$enthusiast
 
 // SIDE BAR STYLES
 
