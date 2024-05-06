@@ -260,6 +260,22 @@ p
             background-color: colors.$enthusiast
             box-shadow: 10px 10px 30px scale-color(colors.$enthusiast, $saturation: -80%, $lightness: -10%), -10px -10px 30px scale-color(colors.$enthusiast, $saturation: -60%, $lightness: 90%)
 
+// Define a mixin for the box shadow
+=box-shadow-styles($shadow-color)
+    // $dark-shadow:
+    box-shadow: 10px 10px 30px scale-color($shadow-color, $saturation: -80%, $lightness: -10%), -10px -10px 30px scale-color($shadow-color, $saturation: -60%, $lightness: 90%)
+
+// Usage example
+.about-me-community-circle
+    +box-shadow-styles(colors.$developer)
+
+.about-me-fluidity-circle
+    +box-shadow-styles(colors.$designer)
+
+.about-me-leadership-circle
+    +box-shadow-styles(colors.$enthusiast)
+
+
 // SIDE BAR STYLES
 
 .social-sidebar
