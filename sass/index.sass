@@ -2,6 +2,9 @@
 
 // GLOBAL
 
+*
+    box-sizing: border-box
+
 body
     font-family: sans-serif
     color: colors.$text
@@ -83,19 +86,24 @@ p
         margin: auto
         max-width: 1350px
         width: 100%
+        &>div
+            margin:
+                left: 4em
+        .foo-row
+            display: flex
+        .foo-col
+            display: flex
+            flex-direction: column
         .foo-desc
             font-size: 1.1em
             width: 100%
-            margin:
-                left: 4em
-                right: 4em
             position: relative // for foo-but-pos
             .foo-name
                 margin: 0
             h3
                 margin-bottom: 0
         img.foo-portrait
-            height: 15em
+            height: 20em
             aspect-ratio: 1
             border-radius: 50%
             object-fit: cover
@@ -227,27 +235,33 @@ p
 .about-me-circles
     display: flex
     align-items: center
-    justify-content: center
+    justify-content: space-between
+    flex-wrap: wrap
+    margin:
+        top: 3em
+        bottom: 3em
+    gap: 6em
     .about-me-circle
         display: flex
         align-items: center
         justify-content: center
-        margin: 5em
-        width: 15em
-        height: 15em
-        border-radius: 150px
+        width: 20rem
+        aspect-ratio: 1
+        border-radius: 50%
         padding: 1em
-        p
-            font-size: 2.5em
+        font-size: 2.5em
         &.about-me-community-circle
             background-color: colors.$developer
-            box-shadow: 0 0 15px 15px colors.$developer
+            // box-shadow: 5px 5px 15px 5px colors.$developer
+            box-shadow: 10px 10px 30px scale-color(colors.$developer, $saturation: -40%, $lightness: -10%), -10px -10px 30px scale-color(colors.$developer, $saturation: -40%, $lightness: 30%)
         &.about-me-fluidity-circle
             background-color: colors.$designer
-            box-shadow: 0 0 15px 15px colors.$designer
+            // box-shadow: 5px 5px 15px 5px colors.$designer
+            box-shadow: 10px 10px 30px scale-color(colors.$designer, $saturation: -40%, $lightness: -10%), -10px -10px 30px scale-color(colors.$designer, $saturation: -40%, $lightness: 30%)
         &.about-me-leadership-circle
             background-color: colors.$enthusiast
-            box-shadow: 0 0 15px 15px colors.$enthusiast
+            // box-shadow: 5px 5px 15px 5px colors.$enthusiast
+            box-shadow: 10px 10px 30px scale-color(colors.$enthusiast, $saturation: -40%, $lightness: -10%), -10px -10px 30px scale-color(colors.$enthusiast, $saturation: -40%, $lightness: 30%)
 
 // SIDE BAR STYLES
 
