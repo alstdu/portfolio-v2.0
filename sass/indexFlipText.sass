@@ -1,4 +1,7 @@
 @use './colors'
+
+$flip-y-padding: 0.2px
+
 #flip
     color: #444343
     text-transform: uppercase
@@ -6,16 +9,16 @@
     font-weight: bold
     margin:
         top: .5em
-    height: calc( 55.47px + ( 0.2em * 2 ) )
+    height: calc( 55.47px + ( $flip-y-padding * 2 ) )
     overflow: hidden
 
 #flip > div
     backdrop-filter: blur( 12px )
     -webkit-backdrop-filter: blur( 12px )
     border-radius: 20px
-    padding: 0.2em 0.75em
+    padding: $flip-y-padding 0.75em
     text-align: center
-    margin-bottom: calc( ( 55.47px + ( 0.2em * 2 ) ) / 2 )
+    margin-bottom: calc( ( 55.47px + ( $flip-y-padding * 2 ) ) / 2 )
 
 #flip div
     animation: show 10s linear infinite
