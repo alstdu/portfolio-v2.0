@@ -1,6 +1,7 @@
 @use './colors'
 
 $flip-y-padding: 0.2px
+$flip-height: calc( 55.47px + ( $flip-y-padding * 2 ) )
 
 #flip
     color: #444343
@@ -9,7 +10,7 @@ $flip-y-padding: 0.2px
     font-weight: bold
     margin:
         top: .5em
-    height: calc( 55.47px + ( $flip-y-padding * 2 ) )
+    height: $flip-height
     overflow: hidden
 
 #flip > div
@@ -18,7 +19,7 @@ $flip-y-padding: 0.2px
     border-radius: 20px
     padding: $flip-y-padding 0.75em
     text-align: center
-    margin-bottom: calc( ( 55.47px + ( $flip-y-padding * 2 ) ) / 2 )
+    margin-bottom: calc( $flip-height / 2 )
 
 #flip div
     animation: show 10s linear infinite
