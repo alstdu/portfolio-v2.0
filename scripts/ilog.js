@@ -1,4 +1,4 @@
-const pages = ['intro', 'process', 'challenges', 'something'];
+const pages = ['intro', 'process', 'challenges', 'improvements'];
 
 // TODO: DRY - don't repeat yourself
 /* global fullpage */
