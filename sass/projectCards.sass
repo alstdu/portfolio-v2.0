@@ -1,0 +1,77 @@
+.proj-section
+    // header height: 52px
+    padding-top: calc(52px + 1em)
+
+.page-title-cont
+    margin: 0 120px
+    position: absolute
+    left: 0
+    right: 0
+    .page-title-cont-inner
+        max-width: 1012.5px
+        margin: auto
+        position: relative
+        .page-title.proj-title
+            font-size: calc( 2.25em * 0.7 ) // not in foo
+            writing-mode: vertical-lr
+            height: max-content
+            transform: rotate(180deg)
+            margin: 0
+            position: absolute
+            z-index: 2
+
+.proj-cont
+    position: relative
+    height: 100%
+    padding:
+        // todo: padding top and bottom needs to be on the fieldset
+        // because otherwise the overflow on the shadows is wrong
+        // this means we need to rework the title position
+        // but that shouldn't be too bad
+        top: 3em
+        bottom: 3em
+        left: 120px
+        right: 120px
+    .bumper
+        width: calc( 120px + max(( 100vw - 1012.5px ) / 2, 4em))
+        position: absolute
+        left: 0
+        top: 1em
+        bottom: 0
+    .bumper:last-child
+        right: 0
+        left: unset
+
+.proj-cont-inner
+    height: 100%
+    margin:
+        left: -120px
+        right: -120px
+    
+.project-fieldset
+    height: 100%
+    display: flex
+    gap: 1em
+    border: none
+    overflow-x: auto
+    scrollbar-width: none
+    // todo: explain why this calc isn't nonsense
+    // 7em to clear the bumper, 2 for breathing room
+    padding: 0 calc( ( (100vw - 1012.5px) / 2 ) + 7em + 2em )
+    input
+        display: none
+    input + label
+        max-height: 1000px
+        height: 100%
+        flex: 
+            shrink: 0
+            grow: 0
+            basis: 10em
+        transition: all 1s
+        border-radius: 15px
+        background: #fafafa
+        box-shadow:  10px 10px 23px #cdcdcd, -10px -10px 23px #ffffff
+        padding: 2em
+    input:checked + label
+        flex:
+            basis: 25em
