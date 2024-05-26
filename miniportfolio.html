@@ -76,6 +76,32 @@
                 </div>
             </div>
         </div>
+        <div class="section">
+            <div class="artifact-header">
+                <div class="media-container">
+
+                </div>
+                <div class="artifact-copy">
+                    <h2 class="artifact-title">Challenges</h2>
+                    <div class="artifact-details">
+                        <p><span class="meta-title">Challenge 1:</span> Tailwind Importing Issues</p>
+                        <p><span class="meta-title">Challenge 2:</span> Tailwind.config.js</p>
+                    </div>
+                    <div class="artifact-summary">
+                        <p>The first major issue I ran into was improper importing of Tailwind. I was using all the correct commands, but for some reason Node modules weren't being created.
+                            I later found out that the reason for this was because it was installing, not in my project folder, but in my User folder on my computer. After dragging that file into my project, most issues fixed itself.
+                        </p>
+                        <br>
+                        <p>While everything was working overall, some of the styles weren't showing up. I even tried downloading Tailwind Intellesense to make sure I was inputting the classes correctly. I found that they weren't even being recognized. 
+                            For about 3 hours, I researched troubleshooting for this issue. I asked Chat GPT, looked on Reddit, Stack Overflow, read the Tailwind docs over and over and over - yet nothing I tried was working.
+                            I eventually found someone was having the same issue in the Tailwind community forums. They said to make sure that I was using 'extend' inside of my theme configuration. 
+                            In hindsight that seems really obvious, but I couldn't find good documentation for that in the docs. Some places it looked optional, and I couldn't find an explaination of what it was even for.
+                            I have since figured out that my custom styles were overwriting the default styles. By adding it into the 'extend', it allowed both styles to exist.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
     <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.extensions.min.js"></script>
