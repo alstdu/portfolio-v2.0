@@ -7,6 +7,7 @@
     position: absolute
     left: 0
     right: 0
+    padding-top: 3em
     .page-title-cont-inner
         max-width: 1012.5px
         margin: auto
@@ -23,15 +24,17 @@
 .proj-cont
     position: relative
     height: 100%
-    padding:
+    width: 100%
+    overflow: hidden
+    // padding:
         // todo: padding top and bottom needs to be on the fieldset
         // because otherwise the overflow on the shadows is wrong
         // this means we need to rework the title position
         // but that shouldn't be too bad
-        top: 3em
-        bottom: 3em
-        left: 120px
-        right: 120px
+        // top: 3em
+        // bottom: 3em
+        // left: 120px
+        // right: 120px
     .bumper
         width: calc( 120px + max(( 100vw - 1012.5px ) / 2, 4em))
         position: absolute
@@ -44,9 +47,9 @@
 
 .proj-cont-inner
     height: 100%
-    margin:
-        left: -120px
-        right: -120px
+    // margin:
+    //     left: -120px
+    //     right: -120px
     
 .project-fieldset
     height: 100%
@@ -57,7 +60,7 @@
     scrollbar-width: none
     // todo: explain why this calc isn't nonsense
     // 7em to clear the bumper, 2 for breathing room
-    padding: 0 calc( ( (100vw - 1012.5px) / 2 ) + 7em + 2em )
+    padding: 3em calc( ( (100vw - 1012.5px) / 2 ) + 7em + 2em )
     input
         display: none
     input + label
