@@ -1,40 +1,7 @@
-.proj-section
-    // header height: 52px
-    padding-top: calc(52px + 1em)
-
-.page-title-cont
-    margin: 0 120px
-    position: absolute
-    left: 0
-    right: 0
-    padding-top: 3em
-    .page-title-cont-inner
-        max-width: 1012.5px
-        margin: auto
-        position: relative
-        .page-title.proj-title
-            font-size: calc( 2.25em * 0.7 ) // not in foo
-            writing-mode: vertical-lr
-            height: max-content
-            transform: rotate(180deg)
-            margin: 0
-            position: absolute
-            z-index: 2
-
-.proj-cont
-    position: relative
+.bar-1
     height: 100%
-    width: 100%
-    overflow: hidden
-    // padding:
-        // todo: padding top and bottom needs to be on the fieldset
-        // because otherwise the overflow on the shadows is wrong
-        // this means we need to rework the title position
-        // but that shouldn't be too bad
-        // top: 3em
-        // bottom: 3em
-        // left: 120px
-        // right: 120px
+    overflow-x: auto
+    scrollbar-width: thin
     .bumper
         width: calc( 120px + max(( 100vw - 1012.5px ) / 2, 4em))
         position: absolute
@@ -45,36 +12,50 @@
         right: 0
         left: unset
 
-.proj-cont-inner
+.bar-title-cont
+    margin: 0 120px
+    position: absolute
+    left: 0
+    right: 0
+    padding-top: calc( 84px + 1em + 3em )
+    .bar-title-cont-inner
+        max-width: 1012.5px
+        margin: auto
+        position: relative
+        .page-title.bar-title
+            font-size: calc( 2.25em * 0.7 ) // not in foo
+            writing-mode: vertical-lr
+            height: max-content
+            transform: rotate(180deg)
+            margin: 0
+            position: absolute
+            z-index: 2
+
+.bar-2
+    width: min-content
     height: 100%
-    // margin:
-    //     left: -120px
-    //     right: -120px
-    
-.project-fieldset
+    padding-top: calc(84px + 1em)
+
+.bar-3
+    border: none
+    padding: 3em 0
+    margin: 0 calc( max( ( (100vw - 1012.5px) / 2 ) + 7em, 120px + 2em + 1em ) + 2em )
     height: 100%
     display: flex
     gap: 1em
-    border: none
-    overflow-x: auto
-    scrollbar-width: none
-    // todo: explain why this calc isn't nonsense
-    // 7em to clear the bumper, 2 for breathing room
-    padding: 3em calc( ( (100vw - 1012.5px) / 2 ) + 7em + 2em )
     input
         display: none
     input + label
         max-height: 1000px
         height: 100%
+        width: 10em
         flex: 
             shrink: 0
             grow: 0
-            basis: 10em
         transition: all 1s
         border-radius: 15px
         background: #fafafa
         box-shadow:  10px 10px 23px #cdcdcd, -10px -10px 23px #ffffff
         padding: 2em
     input:checked + label
-        flex:
-            basis: 25em
+        width: 25em
