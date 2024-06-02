@@ -8,18 +8,16 @@ let isDragging = false;
 let startX;
 let startScrollLeft;
 
-const updateScrollbarPosition = () => {
-    const spaceBetweenBumpers = container.offsetWidth - 2 * bumperWidth;
-    const scrollbarWidth = customScrollbar.offsetWidth;
-    const scrollRatio = content.scrollLeft / ( content.scrollWidth - content.clientWidth );
-    const scrollbarLeft = bumperWidth + scrollRatio * ( spaceBetweenBumpers - scrollbarWidth );
-    customScrollbar.style.left = `${scrollbarLeft}px`;
+function getScrollRatio() {
+    return content.scrollLeft / (content.scrollWidth - content.clientWidth);
 }
 
-const handleResize = () => {
-    // on resize the bumper width can change
-    bumperWidth = bumper.offsetWidth;
-    updateScrollbarPosition();
+function updateScrollbarPosition() {
+    const scrollRatio = getScrollRatio();
+    const scrollbarWidth = customScrollbar.offsetWidth;
+    const availableSpace = `calc(100% - 2 * (120px + max((100vw - 1012.5px) / 2, 4em)) - ${scrollbarWidth}px)`;
+    const scrollbarPosition = `calc(120px + max((100vw - 1012.5px) / 2, 4em) + ${scrollRatio} * ${availableSpace})`;
+    customScrollbar.style.left = scrollbarPosition;
 }
 
 content.addEventListener( 'scroll', () => {
@@ -52,7 +50,3 @@ document.addEventListener( 'mouseup', () => {
     isDragging = false;
     document.body.style.userSelect = ''; // Re-enable text selection
 } );
-
-// Call updateScrollbarPosition initially and on window resize
-window.addEventListener( 'resize', handleResize );
-updateScrollbarPosition();
