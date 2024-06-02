@@ -8,16 +8,30 @@ let isDragging = false;
 let startX;
 let startScrollLeft;
 
-function getScrollRatio() {
+const getScrollRatio = () => {
     return content.scrollLeft / (content.scrollWidth - content.clientWidth);
 }
 
-function updateScrollbarPosition() {
+const updateScrollbarPosition = () => {
     const scrollRatio = getScrollRatio();
     const scrollbarWidth = customScrollbar.offsetWidth;
     const availableSpace = `calc(100% - 2 * (120px + max((100vw - 1012.5px) / 2, 4em)) - ${scrollbarWidth}px)`;
     const scrollbarPosition = `calc(120px + max((100vw - 1012.5px) / 2, 4em) + ${scrollRatio} * ${availableSpace})`;
     customScrollbar.style.left = scrollbarPosition;
+}
+
+const setScrollbarWidth = () => {
+    customScrollbar.style.width = 'calc((100% - 2 * (120px + max((100vw - 1012.5px) / 2, 4em))) * var(--content-ratio))';
+    console.log( customScrollbar.style );
+    updateScrollbarWidth();
+}
+
+function updateScrollbarWidth() {
+    const contentWidth = content.scrollWidth;
+    const visibleWidth = content.clientWidth;
+    const ratio = visibleWidth / contentWidth;
+    customScrollbar.style.setProperty( '--content-ratio', ratio );
+    updateScrollbarPosition();
 }
 
 content.addEventListener( 'scroll', () => {
@@ -50,3 +64,7 @@ document.addEventListener( 'mouseup', () => {
     isDragging = false;
     document.body.style.userSelect = ''; // Re-enable text selection
 } );
+
+// Call updateScrollbarWidth initially and on window resize
+setScrollbarWidth();
+window.addEventListener('resize', updateScrollbarWidth);
