@@ -1,3 +1,4 @@
+// https://chatgpt.com/share/441c1323-116e-4f57-b8de-5915c6a9fe08
 const content = document.querySelector( '.bar-1' );
 const container = content.parentElement;
 const customScrollbar = document.querySelector( '.custom-scrollbar' );
