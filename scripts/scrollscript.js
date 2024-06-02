@@ -22,7 +22,6 @@ const updateScrollbarPosition = () => {
 
 const setScrollbarWidth = () => {
     customScrollbar.style.width = 'calc((100% - 2 * (120px + max((100vw - 1012.5px) / 2, 4em))) * var(--content-ratio))';
-    console.log( customScrollbar.style );
     updateScrollbarWidth();
 }
 
