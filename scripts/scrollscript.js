@@ -67,3 +67,7 @@ document.addEventListener( 'mouseup', () => {
 // Call updateScrollbarWidth initially and on window resize
 setScrollbarWidth();
 window.addEventListener('resize', updateScrollbarWidth);
+
+// since the js ran, we can get rid of the old scrollbar and make our custom one visible
+content.style.scrollbarWidth = 'none';
+customScrollbar.style.display = 'unset';
