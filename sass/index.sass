@@ -43,11 +43,6 @@ a
     text-decoration: none
     color: unset
 
-.slide
-    margin-top: 2em
-    display: flex
-    align-items: center
-
 .cta-button
     width: 9em
     padding: .5em 1.25em
@@ -75,6 +70,10 @@ p
 .fh-section > div
     height: 100vh
 
+.safe-section > div
+    padding-top: calc(84px + 1em)
+    padding-bottom: 3em
+
 .foo:has(.foo-but-pos)
     margin-top: 5em // give room for the button to be above the rest
 
@@ -85,11 +84,8 @@ p
     align-items: center
     font-size: 0.7em
     margin: 120px
-        top: 3em
+        top: 0
         bottom: 0
-    padding:
-        top: 8em
-        bottom: 3em
     .foo-hlimit
         max-height: 700px
     .foo-fh, &.foo-fh
@@ -345,3 +341,17 @@ p
             color: #fadda4
             &:hover
                 color: #ffd37a
+
+@media (width < 400px)
+    #header nav #myMenu 
+        display: none
+
+    .social-sidebar
+        display: none
+
+    .foo
+        margin:
+            left: 0
+            right: 0
+        .foo-main > div
+            margin-left: 0
