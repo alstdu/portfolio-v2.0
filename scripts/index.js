@@ -11,7 +11,7 @@ new fullpage( '#fullpage', {
     scrollBar: false,
     keyboardScrolling: true,
     fixedElements: '#header',
-    sectionsColor: ['#fafafa', '#fafafa', '#fafafa', '#fafafa'],
+    sectionsColor: ['#fafafa', '#fafafa', '#fafafa', '#fafafa', '#fafafa'],
     licenseKey: 'gplv3-license',
     verticalCentered: true,
     navigationTooltips: pages,

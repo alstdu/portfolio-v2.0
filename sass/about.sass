@@ -1,0 +1,155 @@
+/* Variables */
+$background-color: #f4f4f4
+$title-line-height: 29px
+@use './colors'
+
+:root
+    // css variable so we can change it with media queries
+    --circle-size: 15rem
+
+@media (width < 1000px)
+    :root
+        --circle-size: 10rem
+
+@media (width < 630px)
+    :root
+        --circle-size: 8rem
+
+@media (width < 550px)
+    :root
+        --circle-size: 10rem
+
+*
+    box-sizing: border-box
+
+.horizontal-space-container
+    margin: 0 120px
+    & > *
+        max-width: calc( 1012.5px + $title-line-height )
+        margin: auto
+    @media (max-width: 750px)
+        margin: 0 60px
+
+.abt-cont
+    h3
+        font-size: calc(2.5em * 0.7)
+        margin-top: 0
+        margin-bottom: 0
+
+/* Grid container */
+.grid-container
+    margin: auto
+    width: fit-content
+    display: grid
+    grid-template-areas: "title name portrait" "title desc portrait"
+    gap: 10px
+
+    @media (max-width: 750px)
+        grid-template-areas: "title name" "title portrait" "desc desc"
+        grid-template-columns: auto 1fr
+        .abt-name
+            text-align: center
+        .abt-portrait
+            justify-self: center !important
+            width: calc( var(--circle-size) * 1.5 ) !important
+            height: calc( var(--circle-size) * 1.5 ) !important
+
+    .abt-page-title
+        grid-area: title
+    
+    .abt-portrait
+        grid-area: portrait
+
+    .abt-name
+        grid-area: name
+
+    .abt-desc
+        grid-area: desc
+
+    .abt-name, .abt-desc
+        max-width: calc(1012.5px - var(--circle-size))
+
+    // TODO: Consolidate with foo page title
+    .abt-page-title
+        width: min-content
+        justify-self: end
+        font-size: calc(2.25em * 0.7)
+        writing-mode: vertical-lr
+        height: max-content
+        transform: rotate(180deg)
+        margin: 0
+
+    .abt-portrait
+        border-radius: 50%
+        width: var(--circle-size)
+        height: var(--circle-size)
+        object-fit: cover
+        justify-self: end
+
+// .sidebar
+//     writing-mode: vertical-rl
+//     text-align: center
+//     padding: 10px
+
+//     @media (max-width: 481px)
+//         writing-mode: horizontal-tb
+//         text-align: center
+
+// .content
+//     display: flex
+//     flex-direction: column
+//     align-items: left
+//     @media (max-width: 480px)
+//         align-items: center
+//         padding: 3em
+
+//     .abt-portrait
+//         border-radius: 50%
+//         width: 150px
+//         height: 150px
+//         object-fit: cover
+//         @media (max-width: 480px)
+//             width: 100px
+//             height: 100px
+
+.abt-me-circles
+    max-width: 1012.5px
+    margin: auto
+    display: flex
+    justify-content: space-between
+    margin-top: 20px
+
+    @media (max-width: 550px)
+        flex-direction: column
+        align-items: center
+
+    .abt-me-circle
+        display: flex
+        align-items: center
+        justify-content: center
+        width: var(--circle-size)
+        height: var(--circle-size)
+        border-radius: 50%
+        margin-bottom: 1em
+
+    .abt-me-community-circle
+        background-color: colors.$developer
+        box-shadow: 10px 10px 30px scale-color(colors.$developer, $saturation: -80%, $lightness: -10%), -10px -10px 30px scale-color(colors.$developer, $saturation: -60%, $lightness: 90%)
+
+    .abt-me-fluidity-circle
+        background-color: colors.$designer
+        box-shadow: 10px 10px 30px scale-color(colors.$designer, $saturation: -80%, $lightness: -10%), -10px -10px 30px scale-color(colors.$designer, $saturation: -60%, $lightness: 90%)
+
+    .abt-me-leadership-circle
+        background-color: colors.$enthusiast
+        box-shadow: 10px 10px 30px scale-color(colors.$enthusiast, $saturation: -80%, $lightness: -10%), -10px -10px 30px scale-color(colors.$enthusiast, $saturation: -60%, $lightness: 90%)
+
+
+.social-sidebar
+    @media (max-width: 768px)
+        display: none
+
+.fp-watermark
+    @media (max-width: 768px)
+        position: absolute
+        z-index: -1
