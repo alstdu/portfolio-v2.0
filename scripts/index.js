@@ -31,7 +31,6 @@ new fullpage( '#fullpage', {
 
 document.querySelectorAll('.skills-lists h4 button').forEach( ( skillListDropDown ) => {
     skillListDropDown.addEventListener('click', function() {
-        console.log('yeet');
         let expanded = skillListDropDown.getAttribute('aria-expanded') === 'true';
         let target = skillListDropDown.parentElement.nextElementSibling;
         skillListDropDown.setAttribute('aria-expanded', !expanded);
