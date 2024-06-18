@@ -28,3 +28,17 @@ new fullpage( '#fullpage', {
         };
     },
 });
+
+document.querySelectorAll('.skills-lists h4 button').forEach( ( skillListDropDown ) => {
+    skillListDropDown.addEventListener('click', function() {
+        console.log('yeet');
+        let expanded = skillListDropDown.getAttribute('aria-expanded') === 'true';
+        let target = skillListDropDown.parentElement.nextElementSibling;
+        skillListDropDown.setAttribute('aria-expanded', !expanded);
+        if (target.classList.contains('show')) {
+            target.classList.remove('show');
+        } else {
+            target.classList.add('show');
+        }
+      });
+} );

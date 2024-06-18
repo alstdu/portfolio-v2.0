@@ -258,6 +258,19 @@ p
     // one way to do that would be to wrap pairs in containers
     ul
         padding-inline-start: 0
+    h4
+        display: none
+    @media (max-width: 578px)
+        i
+            display: none // hide the icons except...
+        h4
+            display: unset
+            i
+                display: unset // we actually do want to display the i tags in the h4
+        ul
+            display: none
+        .show
+            display: unset
 
 // ABOUT ME STYLES
 
