@@ -2,27 +2,45 @@
 @use './colors'
 @media (max-width: 578px)
     .skills-lists
+        font-size: 1.25em
+        display: flex
+        flex-direction: column
+        align-items: stretch
+        gap: 1.5em
+        font-weight: bold
+        & > div
+            border-radius: 2em
+            padding:
+                top: 1em
+                bottom: 1em
+                left: 2em
+                right: 2em
         button
-            border-radius: 50px
-            width: 13em
-            height: 3em
+            width: 100%
+            padding: 0
             border: unset
             background: unset
+            font-weight: bolder
+            text-align: left
+            display: flex
+            justify-content: space-between
+            align-items: center
+        ul
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            gap: 0.1em
+            li
+                padding-top: 0.1em
+                padding-bottom: 0.1em
         
     .developer-skills-list
-        padding: 2em
-        border-radius: 50px
         background:  colors.$developer
         box-shadow:  3px 3px 13px #A8C9D9,  -3px -3px 13px #E4FFFF
 
     .manager-skills-list
-        padding: 2em
-        border-radius: 50px
         background:  colors.$enthusiast
         box-shadow:  3px 3px 13px #C2AECF,  -3px -3px 13px #FFFFFF
 
     .uxui-skills-list
-        padding: 2em
-        border-radius: 50px
         background: colors.$designer
         box-shadow: 3px 3px 13px #D9C59F, -3px -3px 13px #FFFFD7

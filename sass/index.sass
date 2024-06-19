@@ -267,10 +267,8 @@ p
             display: unset
             i
                 display: unset // we actually do want to display the i tags in the h4
-        ul
+        ul:not(.show)
             display: none
-        .show
-            display: unset
 
 // ABOUT ME STYLES
 
@@ -352,6 +350,14 @@ p
             color: #fadda4
             &:hover
                 color: #ffd37a
+
+@media (width < 740px)
+    .foo
+        margin:
+            left: 60px
+            right: 60px
+        .foo-main > div
+            margin-left: 0
 
 @media (width < 400px)
     #header nav #myMenu
