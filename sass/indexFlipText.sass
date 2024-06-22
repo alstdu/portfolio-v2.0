@@ -1,7 +1,7 @@
 @use './colors'
 
 $flip-y-padding: 0.4em
-$flip-height: calc( 55.47px + ( $flip-y-padding * 2 ) )
+$flip-height: calc( ( ( 4.6225em ) / 3 ) + ( $flip-y-padding * 2 ) )
 
 #flip
     color: #444343
@@ -12,7 +12,12 @@ $flip-height: calc( 55.47px + ( $flip-y-padding * 2 ) )
         top: .5em
     height: $flip-height
     overflow: hidden
-
+    @media screen and ( max-width: 600px )
+        font-size: 1.75rem
+    @media screen and ( max-width: 430px )
+        font-size: 1.3rem
+    @media screen and ( max-width: 430px )
+        font-size: 1rem
 #flip > div
     backdrop-filter: blur( 12px )
     -webkit-backdrop-filter: blur( 12px )
