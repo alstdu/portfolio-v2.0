@@ -189,7 +189,13 @@ p
     font-size: 5.2rem
     color: colors.$text
     filter: drop-shadow(2px 4px 4px rgba(0, 0, 0, 0.292))
-
+    @media screen and ( max-width: 560px )
+        font-size: 4rem
+    @media screen and ( max-width: 430px )
+        font-size: 3rem
+    @media screen and ( max-width: 350px )
+        font-size: 2rem
+        
 // .index-panel
 //     position: absolute
 //     width: 35%
@@ -210,12 +216,12 @@ p
     right: 0
     left: 0
     overflow: hidden
-    .inner-spline-holder
-        position: absolute
-        top: 0
-        bottom: 0
-        right: 0
-        left: 0
+    // .inner-spline-holder
+    //     position: absolute
+    //     top: 0
+    //     bottom: 0
+    //     right: 0
+    //     left: 0
 
 // PROJECTS STYLES
 
