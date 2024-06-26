@@ -4,10 +4,16 @@
     display: flex
     flex-direction: row
     align-items: center
-
+    @media (width < 950px)
+        flex-direction: column
+        padding:
+            top: 2em
 .artifact-copy
     width: 75%
     padding: 2em
+    @media (width < 650px)
+        width: 90%
+
 
 .artifact-details
     margin:
@@ -30,6 +36,9 @@ p
 .spline-container
     width: 90%
     height: auto
+    spline-viewer
+    @media (width < 800px)
+        display: none
 
 .media-container
     width: 75%
