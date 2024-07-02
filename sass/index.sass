@@ -35,7 +35,11 @@ body
         a
             text-decoration: none
             color: colors.$text
-
+    @media screen and (max-width: 530px )
+        font-size: 0.75em
+    @media screen and (max-width: 405px )
+        font-size: 0.6em   
+// do i even need the one above??
 li
     list-style-type: none
 
@@ -64,7 +68,10 @@ p
 .logo
     width: auto
     height: 5em
-
+    @media screen and (max-width: 530px )
+        height: 3em
+    @media screen and (max-width: 405px )
+        height: 2em   
 // FOO STYLES.
 
 .fh-section > div
