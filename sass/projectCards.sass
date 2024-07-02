@@ -94,3 +94,61 @@
     height: 8px
     background: gray
     border-radius: 4px
+
+@media screen and ( max-width: 800px )
+    .bar-1
+        margin: unset
+        height: unset
+        overflow-x: visible
+        scrollbar-width: none !important
+        .bumper
+            display: none
+
+    .bar-title-cont
+        margin: 0 1em
+        padding-top: calc( 84px + 1em )
+        .bar-title-cont-inner
+            max-width: unset
+    
+    .bar-2
+        width: unset
+        padding-bottom: 3em
+
+    .bar-3
+        align-items: center
+        flex-direction: column
+        padding: 0 3.5em
+        margin: unset
+        height: unset
+        input + label
+            padding: 1.5em
+            max-height: 10em
+            height: max-content
+            width: 100%
+            max-width: 25em
+            h3
+                order: -2
+                margin: unset
+            img
+                position: unset
+                order: -1
+                height: unset
+                width: 100%
+                max-width: 20em
+            p
+                margin-top: 0
+            p, .neu-button
+                transition: transform 1s
+            // closed
+            &:not(input:checked + label)
+                h3
+                    margin: unset
+                p, .neu-button
+                    display: unset
+                    transform: scaleY(0)
+                img
+                    transform: translate(0, calc(25% - 1em)) scale(1.5)
+                    opacity: 50%
+        input:checked + label
+            max-height: 40em 
+            width: unset
