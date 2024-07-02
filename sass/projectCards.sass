@@ -1,4 +1,5 @@
-.bar-1
+// everything on the section
+.section-view
     height: 100%
     overflow-x: auto
     scrollbar-width: thin // set to none by js if it runs
@@ -11,14 +12,14 @@
     .bumper:last-child
         right: 0
         left: unset
-
-.bar-title-cont
+// pushes the page title down to accommodate header size
+.section-title-cont
     margin: 0 120px
     position: absolute
     left: 0
     right: 0
     padding-top: calc( 84px + 1em + 3em )
-    .bar-title-cont-inner
+    .section-title-cont-inner
         max-width: 1012.5px
         margin: auto
         position: relative
@@ -31,12 +32,14 @@
             position: absolute
             z-index: 2
 
-.bar-2
+// everything except the header
+.section-top-spacing
     width: min-content
     height: 100%
     padding-top: calc(84px + 1em)
 
-.bar-3
+// pushes content over to the right to avoid colliding with page title and social icons
+.section-left-spacing
     border: none
     padding: 3em 0
     margin: 0 calc( max( ( (100vw - 1012.5px) / 2 ) + 7em, 120px + 2em + 1em ) + 2em )
@@ -96,7 +99,7 @@
     border-radius: 4px
 
 @media screen and ( max-width: 800px )
-    .bar-1
+    .section-view
         margin: unset
         height: unset
         overflow-x: visible
@@ -104,17 +107,17 @@
         .bumper
             display: none
 
-    .bar-title-cont
+    .section-title-cont
         margin: 0 1em
         padding-top: calc( 84px + 1em )
-        .bar-title-cont-inner
+        .section-title-cont-inner
             max-width: unset
     
-    .bar-2
+    .section-top-spacing
         width: unset
         padding-bottom: 3em
 
-    .bar-3
+    .section-left-spacing
         align-items: center
         flex-direction: column
         padding: 0 3.5em
