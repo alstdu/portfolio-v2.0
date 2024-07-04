@@ -37,10 +37,12 @@ p
     width: 90%
     height: auto
     spline-viewer
-    @media (width < 800px)
-        display: none
+        @media (width < 800px)
+            display: none
 
 .media-container
+    display: flex
+    justify-content: center
     width: 75%
     padding: 2em
     margin: 
@@ -48,6 +50,9 @@ p
         left: 3em
         right: 3em
         bottom: 3em
+    @media (width < 949px)
+        margin:
+            bottom: 1em
     .media
         width: 75%
         height: auto
