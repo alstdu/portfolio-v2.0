@@ -53,6 +53,43 @@
                 </div>
             </div>
         </div>
+        <div class="section safe-section">
+            <div class="artifact-header">
+                <div class="media-container">
+                    <iframe width="337" height="400" src="https://www.youtube.com/embed/7tELOAM7jfo" title="code this d&amp;d spell list with me for page one of my final web scripting project. #webdevelopment" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; 
+                    picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <div class="artifact-copy">
+                    <h2 class="artifact-title">My Process</h2>
+                    <div class="artifact-details">
+                        <p><span class="meta-title"> Find APIs &amp; Plugins </span></p>
+                        <p>Step 1 in my process involved finding APIs and plugins I wanted to use. 
+                            The API I chose was the <a href="https://www.dnd5eapi.co/docs/">dnd5e API</a>, specifically targeting the spells list endpoint.
+                            After that, I looked for plugins that would enhance the user experience. One of my main goals was to have a 3D dice 
+                            rolling page. Typically the ones you would see are 2d with an animation, but it doesn't mimic the feeling of real dice to me.
+                            I ended up finding a really awesome plugin by <a href="https://fantasticdice.games/">3DDice</a> which uses ammoJS and BabylonJS
+                            for the dice models and physics. In addition to the spells list information, I wanted to be able to sort the list and search for 
+                            specific spells. For this I used <a href="https://listjs.com/">List.js</a>. I also used Overlay Scrollbars for a custom scrollbar to
+                            fit the feel, and <a href="https://sarcadass.github.io/granim.js/">Granim</a> for colorful interactions with the ui.
+                        </p>
+                        <p><span class="meta-title">Coding the Table</span></p>
+                        <p>After planning out how I wanted to use my new toolset, I began with developing a simple table that would be used for the spells list.
+                            This involved a lot of documentation reading and research on accessibility. I wanted to make sure that the table would be correctly 
+                            parsed by screen readers and that the use of keyboard interactions would be possible. This meant ensuring the correct HTML structure
+                            and the use of HTML5 tags, along side using aria properties. Once the table was properly set up, I began adding the <a href="https://github.com/alstdu/dugo-dnd-tools/commit/2cb623615481709f286cefd93d793cce18c4e344">expansion panels</a>.
+                            These panels contained all the necessary information about the spell from the dnd5e API. At this point I also began using JavaScript to <a href="https://github.com/alstdu/dugo-dnd-tools/commit/be9f02adc3cbad1c75053dd3a47e488a1fbf73d8">create DOM elements</a> if certain information was present, and to toggle
+                            the aria-expanded property from true to false depending on if the panel was open or not.
+                        </p>
+                        <p><span class="meta-title">Adding the plugins</span></p>
+                        <p></p>
+                    </div>
+                    <div class="artifact-summary">
+                        <p>Scroll down to see the Figma</p>
+                        <div class="arrow arrow-bounce project-arrow"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.js"></script>
     <script type="text/javascript" src="./node_modules/fullpage.js/dist/fullpage.extensions.min.js"></script>
