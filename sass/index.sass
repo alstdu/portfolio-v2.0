@@ -397,10 +397,13 @@ p
             top: 50%
             transform: translateY(-50%)
             background-color: colors.$enthusiast
+            overflow: hidden
             ul
                 margin: unset
                 padding: unset
                 transform: scale(0)
+                li
+                    flex-shrink: 0
         .bun
             &:nth-child(1)
                 top: 25%
