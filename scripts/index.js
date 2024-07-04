@@ -29,10 +29,13 @@ new fullpage( '#fullpage', {
     },
 });
 
-document.querySelectorAll('.skills-lists h4 button').forEach( ( skillListDropDown ) => {
+// TODO: consider if the button should be targetted or the parent div or what
+// document.querySelectorAll('.skills-lists h4 button')
+document.querySelectorAll('.skills-lists > div').forEach( ( skillListDropDown ) => {
     skillListDropDown.addEventListener('click', function() {
         let expanded = skillListDropDown.getAttribute('aria-expanded') === 'true';
-        let target = skillListDropDown.parentElement.nextElementSibling;
+        // let target = skillListDropDown.parentElement.nextElementSibling;
+        let target = skillListDropDown.querySelector('ul');
         skillListDropDown.setAttribute('aria-expanded', !expanded);
         if (target.classList.contains('show')) {
             target.classList.remove('show');
