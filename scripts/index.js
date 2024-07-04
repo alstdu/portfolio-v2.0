@@ -49,7 +49,3 @@ document.querySelectorAll('.skills-lists > div').forEach( ( skillListDropDown ) 
         }
       });
 } );
-
-document.querySelector('.hamburger').addEventListener('click', function() {
-    this.classList.toggle('open');
-});
