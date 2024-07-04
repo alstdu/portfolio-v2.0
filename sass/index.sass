@@ -287,6 +287,9 @@ p
             display: unset
             i
                 display: unset // we actually do want to display the i tags in the h4
+                transition: transform 0.5s ease
+                &.expanded
+                    transform: rotate(180deg)
         ul:not(.show)
             display: none
 

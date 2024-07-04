@@ -36,13 +36,16 @@ document.querySelectorAll('.skills-lists > div').forEach( ( skillListDropDown ) 
         let expanded = skillListDropDown.getAttribute('aria-expanded') === 'true';
         // let target = skillListDropDown.parentElement.nextElementSibling;
         let target = skillListDropDown.querySelector('ul');
+        let arrow = skillListDropDown.querySelector('h4 i');
         // TODO: does targetting the div instead of the button
         // hurt the accessibility of this aria-expanded?
         skillListDropDown.setAttribute('aria-expanded', !expanded);
         if (target.classList.contains('show')) {
             target.classList.remove('show');
+            arrow.classList.remove('expanded');
         } else {
             target.classList.add('show');
+            arrow.classList.add('expanded');
         }
       });
 } );
