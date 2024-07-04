@@ -41,3 +41,7 @@ document.querySelectorAll('.skills-lists h4 button').forEach( ( skillListDropDow
         }
       });
 } );
+
+document.querySelector('.hamburger').addEventListener('click', function() {
+    this.classList.toggle('open');
+});

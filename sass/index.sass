@@ -11,15 +11,24 @@ body
     font-weight: bold
 
 #header
+    button.hamburger
+        background-color: unset
+        border: unset
+        padding: unset
     position: fixed
     top: 0
     width: 100%
+    display: flex
+    justify-content: space-between
+    min-height: 2.5em
     // background-color: #d9d9d9d6
     padding: 0
+    a:has(img)
+        display: flex
+        align-items: center
 
 #header nav
     display: flex
-    width: 100%
 
 #header nav #myMenu
     display: flex
@@ -35,11 +44,8 @@ body
         a
             text-decoration: none
             color: colors.$text
-    @media screen and (max-width: 530px )
+    @media screen and (max-width: 562px )
         font-size: 0.75em
-    @media screen and (max-width: 405px )
-        font-size: 0.6em   
-// do i even need the one above??
 li
     list-style-type: none
 
@@ -68,10 +74,10 @@ p
 .logo
     width: auto
     height: 5em
-    @media screen and (max-width: 530px )
+    @media screen and (max-width: 562px )
         height: 3em
-    @media screen and (max-width: 405px )
-        height: 2em   
+    // @media screen and (max-width: 405px )
+    //     height: 2em
 // FOO STYLES.
 
 .fh-section > div
@@ -372,9 +378,57 @@ p
         .foo-main > div
             margin-left: 0
 
-@media (width < 400px)
-    #header nav #myMenu
-        display: none
+@media (width < 450px)
+    #header .hamburger
+        *
+            // TODO: only some things not all
+            // TODO: split this up in to keyframes to make it nice
+        transition: all 1s ease
+        position: relative
+        width: 100%
+        nav, .bun
+            position: absolute
+            width: 2em
+            height: 0.4em
+            right: 1em
+            border-radius: 0.25em
+        nav
+            top: 50%
+            transform: translateY(-50%)
+            background-color: colors.$enthusiast
+            ul
+                margin: unset
+                padding: unset
+                transform: scale(0)
+        .bun
+            &:nth-child(1)
+                top: 25%
+                background-color: colors.$developer
+            &:nth-child(3)
+                bottom: 25%
+                background-color: colors.$designer
+        &.open
+            nav
+                top: 100%
+                transform: translateY(0%)
+                height: 19.4px
+                width: 100vw
+                right: 0
+                border-radius: 0
+                padding: 0px 1em
+                ul
+                    transform: unset
+            // TODO: some of these transforms shouldn't be
+            // in the media query for a smoother animation
+            // when changing screen sizes
+            .bun
+                &:nth-child(1)
+                    top: 50%
+                    transform: translateY(-50%) rotate(45deg) 
+                &:nth-child(3)
+                    bottom: 50%
+                    transform: translateY(50%) rotate(-45deg)
+            
 
     .social-sidebar
         display: none
