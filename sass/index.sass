@@ -79,7 +79,7 @@ p
         height: 3em
     // @media screen and (max-width: 405px )
     //     height: 2em
-// FOO STYLES.
+// layout STYLES.
 
 .fh-section > div
     height: 100vh
@@ -88,10 +88,10 @@ p
     padding-top: calc(84px + 1em)
     padding-bottom: 3em
 
-.foo:has(.foo-but-pos)
+.layout:has(.layout-but-pos)
     margin-top: 5em // give room for the button to be above the rest
 
-.foo
+.layout
     display: flex
     flex-direction: column
     justify-content: center
@@ -100,14 +100,14 @@ p
     margin: 120px
     top: 0
     bottom: 0
-    .foo-hlimit
+    .layout-hlimit
         max-height: 700px
-    .foo-fh, &.foo-fh
+    .layout-fh, &.layout-fh
         height: 100%
         margin:
             top: 0
             bottom: 0
-    &.foo-fh
+    &.layout-fh
         // padding:
         //     top: 10em
         //     bottom: 5em
@@ -121,7 +121,7 @@ p
         margin: 0
     h3
         font-size: 2.5em
-    .foo-main
+    .layout-main
         display: flex
         justify-content: space-between
         margin: auto
@@ -130,27 +130,27 @@ p
         &>div
             margin:
                 left: 4em
-        .foo-row
+        .layout-row
             display: flex
-        .foo-col
+        .layout-col
             display: flex
             flex-direction: column
-        .foo-desc
+        .layout-desc
             font-size: 1.1em
             width: 100%
-            position: relative // for foo-but-pos
-            .foo-name
+            position: relative // for layout-but-pos
+            .layout-name
                 margin: 0
             h3
                 margin-bottom: 0
-        img.foo-portrait
+        img.layout-portrait
             height: 20em
             aspect-ratio: 1
             border-radius: 50%
             object-fit: cover
             filter: drop-shadow( 0 0 15px colors.$enthusiast )
 
-.foo-but
+.layout-but
     width: 7em
     padding: .5em 1.25em
     background-color: #333
@@ -160,7 +160,7 @@ p
     cursor: pointer
     &:hover, &:focus
         background-color: #555
-    &.foo-but-pos
+    &.layout-but-pos
         position: absolute
         top: -1em
         transform: translateY(-100%)
@@ -375,11 +375,11 @@ p
                 color: #ffd37a
 
 @media (width < 740px)
-    .foo
+    .layout
         margin:
             left: 60px
             right: 60px
-        .foo-main > div
+        .layout-main > div
             margin-left: 0
 
 @media (width < 450px)
@@ -440,10 +440,10 @@ p
     .social-sidebar
         display: none
 
-    .foo
+    .layout
         margin:
             left: 0
             // keep right margin for nav circles
             // right: 0
-        .foo-main > div
+        .layout-main > div
             margin-left: 0
